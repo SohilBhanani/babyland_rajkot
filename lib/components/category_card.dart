@@ -1,6 +1,5 @@
-import 'package:babylandrajkot/model/category_model_api.dart';
+import '../shared/ui_helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:woocommerce/models/product_category.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
@@ -20,10 +19,10 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0)),
+          borderRadius: roundedCorner(12)),
       elevation: 5,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(18.0),
+        borderRadius: roundedCorner(12),
         child: Container(
             child: Column(
               children: <Widget>[
@@ -43,8 +42,7 @@ class CategoryCard extends StatelessWidget {
                       alignment: AlignmentDirectional.center,
                       child: Text(
                         name,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold),
+                        style:myTextTheme(context).bodyText1,
                       ),
                     ),
                   ),
