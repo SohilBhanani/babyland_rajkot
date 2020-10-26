@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "957406440080",
+    "firebase_url": "https://babylandrajkot-4f85c.firebaseio.com",
+    "project_id": "babylandrajkot-4f85c",
+    "storage_bucket": "babylandrajkot-4f85c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957406440080:android:dc29bdc308c951336a0615",
+        "android_client_info": {
+          "package_name": "com.dashdash.babylandrajkot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957406440080-fdog6drnt2ehg9t7toedogr0b2do293r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dashdash.babylandrajkot",
+            "certificate_hash": "7d00cf39e350157c40678fbde1e5efac27385e57"
+          }
+        },
+        {
+          "client_id": "957406440080-77rd32li8osdn5i7ierb6dvgpakobcd9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYvspLCEVjAFxvEDn7y2h5e86TAW53MqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957406440080-77rd32li8osdn5i7ierb6dvgpakobcd9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
