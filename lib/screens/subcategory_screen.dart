@@ -1,8 +1,9 @@
-import 'package:babyland_optimised/components/category_card.dart';
-import 'package:babyland_optimised/screens/p_list_screen.dart';
-import 'package:babyland_optimised/shared/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:woocommerce/models/product_category.dart';
+
+import '../components/category_card.dart';
+import '../screens/p_list_screen.dart';
+import '../shared/ui_helpers.dart';
 
 class SubCategoryScreen extends StatelessWidget {
   final int id;

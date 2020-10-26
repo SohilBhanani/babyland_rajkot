@@ -1,4 +1,4 @@
-import 'package:babyland_optimised/shared/colors.dart';
+import '../shared/colors.dart';
 import 'package:flutter/material.dart';
 
 ThemeData babyTheme() => ThemeData(

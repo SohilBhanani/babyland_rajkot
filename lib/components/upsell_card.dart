@@ -1,4 +1,4 @@
-import 'package:babyland_optimised/shared/ui_helpers.dart';
+import '../shared/ui_helpers.dart';
 import 'package:flutter/material.dart';
 
 class UpsellCard extends StatelessWidget {

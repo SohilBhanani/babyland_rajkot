@@ -1,4 +1,4 @@
-import 'package:babyland_optimised/models/cart_model.dart';
+import '../models/cart_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:woocommerce/models/products.dart';
 

@@ -1,4 +1,4 @@
-import 'package:babyland_optimised/shared/social_media.dart';
+import '../../shared/social_media.dart';
 import 'package:flutter/material.dart';
 
 class AboutUs extends StatelessWidget {

@@ -1,11 +1,12 @@
-import 'package:babyland_optimised/models/cart_model.dart';
-import 'package:babyland_optimised/screens/checkout_screen.dart';
-import 'package:babyland_optimised/services/cart_service.dart';
-import 'package:babyland_optimised/services/payment_service.dart';
-import 'package:babyland_optimised/shared/colors.dart';
-import 'package:babyland_optimised/shared/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../models/cart_model.dart';
+import '../screens/checkout_screen.dart';
+import '../services/cart_service.dart';
+import '../services/payment_service.dart';
+import '../shared/colors.dart';
+import '../shared/ui_helpers.dart';
 
 class CartScreen extends StatelessWidget {
   final uid;

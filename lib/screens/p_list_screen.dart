@@ -1,11 +1,11 @@
-import 'package:babyland_optimised/components/p_tile.dart';
-import 'package:babyland_optimised/services/scrolling_service.dart';
-import 'package:babyland_optimised/services/variable_service.dart';
-import 'package:babyland_optimised/shared/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:woocommerce/models/products.dart';
 
+import '../components/p_tile.dart';
+import '../services/scrolling_service.dart';
+import '../services/variable_service.dart';
+import '../shared/ui_helpers.dart';
 import 'product/product_screen.dart';
 
 class PListScreen extends StatefulWidget {

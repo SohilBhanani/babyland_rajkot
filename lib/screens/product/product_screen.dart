@@ -1,4 +1,4 @@
-import 'package:babyland_optimised/services/color_size_choice.dart';
+import '../../services/color_size_choice.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:woocommerce/models/products.dart';

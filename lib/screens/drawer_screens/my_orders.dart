@@ -1,9 +1,9 @@
-import 'package:babyland_optimised/services/database_service.dart';
-import 'package:babyland_optimised/shared/colors.dart';
-import 'package:babyland_optimised/shared/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+
+import '../../services/database_service.dart';
+import '../../shared/ui_helpers.dart';
 
 class MyOrders extends StatelessWidget {
   final String uid;

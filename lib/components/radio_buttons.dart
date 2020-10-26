@@ -1,6 +1,6 @@
-import 'package:babyland_optimised/services/color_size_choice.dart';
-import 'package:babyland_optimised/shared/colors.dart';
-import 'package:babyland_optimised/shared/ui_helpers.dart';
+import '../services/color_size_choice.dart';
+import '../shared/colors.dart';
+import '../shared/ui_helpers.dart';
 import 'package:direct_select/direct_select.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

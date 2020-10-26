@@ -1,9 +1,9 @@
-import 'package:babyland_optimised/shared/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 import '../services/database_service.dart';
+import '../shared/colors.dart';
 //test
 //rzp_test_yyoeTOKh8VgWMN
 //lHE6Jguq9xEcQ2smlGUUqvJX
@@ -101,14 +101,14 @@ class PaymentService with ChangeNotifier {
       @required String contact,
       @required double amount}) {
     var options = {
-      'key': 'rzp_test_yyoeTOKh8VgWMN',
+      'key': 'rzp_live_7788YlT5Fp35zY',
       'amount': amount * 100,
       'name': 'Babyland',
       'description': ' Online Payment',
       'prefill': {'contact': contact, 'email': email},
-      'external': {
-        'wallets': ['paytm']
-      }
+      // 'external': {
+      //   'wallets': ['paytm']
+      // }
     };
 
     _razorpay.open(options);

@@ -1,11 +1,11 @@
-import 'package:babyland_optimised/components/drawer_component.dart';
-import 'package:babyland_optimised/screens/cart_screen.dart';
-import 'package:babyland_optimised/services/auth_service.dart';
-import 'package:babyland_optimised/shared/ui_helpers.dart';
 import 'package:flutter/material.dart';
-
-import 'package:babyland_optimised/shared/colors.dart';
 import 'package:provider/provider.dart';
+
+import '../../components/drawer_component.dart';
+import '../../screens/cart_screen.dart';
+import '../../services/auth_service.dart';
+import '../../shared/ui_helpers.dart';
+import '../../shared/colors.dart';
 
 import 'category_tab.dart';
 import 'featured_tab.dart';

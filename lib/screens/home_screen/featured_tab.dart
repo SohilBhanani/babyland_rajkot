@@ -1,13 +1,14 @@
-import 'package:babyland_optimised/components/baby_wall.dart';
-import 'package:babyland_optimised/components/featured_card.dart';
-import 'package:babyland_optimised/components/featured_carousel.dart';
-import 'package:babyland_optimised/screens/product/product_screen.dart';
-import 'package:babyland_optimised/services/woocommerce_service.dart';
-import 'package:babyland_optimised/shared/colors.dart';
-import 'package:babyland_optimised/shared/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:woocommerce/models/products.dart';
+
+import '../../components/baby_wall.dart';
+import '../../components/featured_card.dart';
+import '../../components/featured_carousel.dart';
+import '../../screens/product/product_screen.dart';
+import '../../services/woocommerce_service.dart';
+import '../../shared/colors.dart';
+import '../../shared/ui_helpers.dart';
 
 class FeaturedTabView extends StatelessWidget {
   @override

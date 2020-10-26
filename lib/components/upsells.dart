@@ -1,7 +1,7 @@
-import 'package:babyland_optimised/components/upsell_card.dart';
-import 'package:babyland_optimised/screens/product/product_screen.dart';
-import 'package:babyland_optimised/services/woocommerce_service.dart';
-import 'package:babyland_optimised/shared/ui_helpers.dart';
+import '../components/upsell_card.dart';
+import '../screens/product/product_screen.dart';
+import '../services/woocommerce_service.dart';
+import '../shared/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:woocommerce/models/products.dart';

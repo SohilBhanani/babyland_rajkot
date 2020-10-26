@@ -1,9 +1,8 @@
-import 'package:babyland_optimised/services/woocommerce_service.dart';
 import 'package:flutter/widgets.dart';
 import 'package:woocommerce/models/products.dart';
 
-import '../shared/ui_helpers.dart';
 import '../woocommerce_api.dart';
+import '../services/woocommerce_service.dart';
 
 class PaginationService extends ChangeNotifier {
   static const int ItemRequestThreshold = 10;

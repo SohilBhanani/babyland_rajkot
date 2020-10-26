@@ -1,11 +1,12 @@
-import 'package:babyland_optimised/screens/authentication/register_screen.dart';
-import 'package:babyland_optimised/services/auth_service.dart';
-import 'package:babyland_optimised/shared/colors.dart';
-import 'package:babyland_optimised/shared/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
+
+import '../../screens/authentication/register_screen.dart';
+import '../../services/auth_service.dart';
+import '../../shared/colors.dart';
+import '../../shared/ui_helpers.dart';
 
 class LoginScreen extends StatefulWidget {
   @override

@@ -1,9 +1,9 @@
-import 'package:babyland_optimised/auth_widget.dart';
-import 'package:babyland_optimised/services/auth_service.dart';
-import 'package:babyland_optimised/services/banner_service.dart';
-import 'package:babyland_optimised/services/cart_service.dart';
-import 'package:babyland_optimised/services/database_service.dart';
-import 'package:babyland_optimised/services/scrolling_service.dart';
+import './auth_widget.dart';
+import './services/auth_service.dart';
+import './services/banner_service.dart';
+import './services/cart_service.dart';
+import './services/database_service.dart';
+import './services/scrolling_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
