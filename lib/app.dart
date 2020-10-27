@@ -1,12 +1,11 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import './auth_widget.dart';
 import './services/auth_service.dart';
 import './services/banner_service.dart';
 import './services/cart_service.dart';
 import './services/database_service.dart';
-import './services/scrolling_service.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
 import 'services/woocommerce_service.dart';
 import 'shared/theme.dart';
 

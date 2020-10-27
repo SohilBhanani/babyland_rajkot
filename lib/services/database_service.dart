@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/drawer_screens/my_orders.dart';
-import 'cart_service.dart';
 
 class DbService {
   final fstore = FirebaseFirestore.instance;

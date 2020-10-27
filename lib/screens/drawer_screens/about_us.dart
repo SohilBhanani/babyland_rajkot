@@ -1,5 +1,6 @@
-import '../../shared/social_media.dart';
 import 'package:flutter/material.dart';
+
+import '../../shared/social_media.dart';
 
 class AboutUs extends StatelessWidget {
   @override

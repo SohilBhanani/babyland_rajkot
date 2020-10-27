@@ -1,6 +1,7 @@
-import '../models/cart_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:woocommerce/models/products.dart';
+
+import '../models/cart_model.dart';
 
 class CartService with ChangeNotifier {
   List<CartModel> _cart = [];

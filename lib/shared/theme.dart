@@ -1,5 +1,6 @@
-import '../shared/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../shared/colors.dart';
 
 ThemeData babyTheme() => ThemeData(
       visualDensity: VisualDensity.adaptivePlatformDensity,

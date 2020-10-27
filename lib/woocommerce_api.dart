@@ -5,7 +5,7 @@ WooCommerce woo = WooCommerce(
   // consumerKey: "ck_8b3bbc8d84793131a04976e59aec5a34253834ea",
   // consumerSecret: "cs_73f214ec3a64419286453f98ebf815561f3c2fff",
 
-  // bluehost
+  // `bluehost`
 
   baseUrl: "https://babylandrajkot.com",
   consumerKey: "ck_1fb1c5b82fbfdb5d338bdabde8daf18a5034c7b0",

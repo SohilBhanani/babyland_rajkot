@@ -1,10 +1,10 @@
-import '../../services/color_size_choice.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:woocommerce/models/products.dart';
 
 import 'simple_product.dart';
 import 'variable_product.dart';
+import '../../services/color_size_choice.dart';
 
 class ProductScreen extends StatelessWidget {
   @override

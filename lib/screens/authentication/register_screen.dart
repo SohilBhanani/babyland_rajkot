@@ -1,9 +1,10 @@
-import '../../services/auth_service.dart';
-import '../../shared/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
+
+import '../../services/auth_service.dart';
+import '../../shared/ui_helpers.dart';
 
 class RegisterScreen extends StatefulWidget {
   final Function toggleView;
