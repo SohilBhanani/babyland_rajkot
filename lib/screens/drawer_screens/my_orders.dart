@@ -9,6 +9,7 @@ class MyOrders extends StatelessWidget {
   final String uid;
   MyOrders(this.uid);
 
+  // ignore: missing_return
   Color getColor(String s) {
     switch (s) {
       case 'Processing':

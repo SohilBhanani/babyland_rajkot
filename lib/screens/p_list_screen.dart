@@ -24,7 +24,6 @@ class _PListScreenState extends State<PListScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     products = ScrollingService(widget.categoryId);
     _scrollController.addListener(() {
@@ -37,7 +36,6 @@ class _PListScreenState extends State<PListScreen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _scrollController.dispose();
   }
