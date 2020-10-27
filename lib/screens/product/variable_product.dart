@@ -42,13 +42,10 @@ class VariableProduct extends StatelessWidget {
                           lrPadding(
                             child: Text(
                               value.statusString,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headline6
-                                  .apply(
-                                      color: value.stockStatus == 'outofstock'
-                                          ? Colors.red
-                                          : Colors.green),
+                              style: TextStyle(
+                                  color: value.stockStatus == 'outofstock'
+                                      ? Colors.red
+                                      : Colors.green),
                             ),
                           ),
                           value.regularPrice == ''
@@ -66,9 +63,7 @@ class VariableProduct extends StatelessWidget {
                                       horizontalSpaceMedium,
                                       Text(
                                         'Select Size/Color to know more',
-                                        style: myTextTheme(context)
-                                            .button
-                                            .apply(color: kRed),
+                                        style: TextStyle(color: kRed),
                                       ),
                                     ],
                                   ),
