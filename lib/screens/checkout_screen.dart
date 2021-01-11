@@ -8,9 +8,12 @@ import '../services/database_service.dart';
 import '../services/payment_service.dart';
 import '../shared/colors.dart';
 import '../shared/ui_helpers.dart';
+
 class CheckoutScreen extends StatelessWidget {
   final uid;
+
   CheckoutScreen({this.uid});
+
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -45,7 +48,7 @@ class CheckoutScreen extends StatelessWidget {
                 'Address',
                 style: myTextTheme(context).headline3.apply(color: kPrim),
               ),
-              verticalSpaceSmall,
+              verticalSpaceTiny,
               Divider(
                 color: kPrim,
               ),
@@ -97,12 +100,12 @@ class CheckoutScreen extends StatelessWidget {
                 'Summery',
                 style: myTextTheme(context).headline3.apply(color: kPrim),
               ),
-              verticalSpaceSmall,
+              verticalSpaceTiny,
               Divider(
                 color: kPrim,
               ),
               SizedBox(
-                height: screenHeight(context) * 0.45,
+                height: screenHeight(context) * 0.35,
                 child: ListView.builder(
                     itemCount: cart.length,
                     itemBuilder: (BuildContext context, index) {
@@ -165,12 +168,63 @@ class CheckoutScreen extends StatelessWidget {
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Total: ' + cartService.totalPrice().toString(),
-                        style:
-                            myTextTheme(context).headline5.apply(color: kPrim),
+                    children: [Container(
+                      width: screenWidth(context)-16,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Text('Total (Incl. GST): ',
+                                style: myTextTheme(context)
+                                    .button
+                                    .apply(color: Colors.grey[600])),
+                          ),
+                          Text(cartService.totalPrice().toString(),
+                              style: myTextTheme(context)
+                                  .button
+                                  .apply(color: Colors.grey[600])),
+                        ],
                       ),
+                    ),
+                      Container(
+                        width: screenWidth(context)-16,
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Text('Shipping:',
+                                  style: myTextTheme(context)
+                                      .button
+                                      .apply(color: Colors.grey[600])),
+                            ),
+                            Text('400',
+                                style: myTextTheme(context)
+                                    .button
+                                    .apply(color: Colors.grey[600])),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        width: screenWidth(context)-16,
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Text('Grand Total:',
+                                  style: myTextTheme(context)
+                                      .headline6
+                                      .apply(color: kPrim)),
+                            ),
+                            Text('40',
+                                style: myTextTheme(context)
+                                    .headline6
+                                    .apply(color: kPrim)),
+                          ],
+                        ),
+                      ),
+                      // Text(
+                      //   'Total (Incl GST): ' +
+                      //       cartService.totalPrice().toString(),
+                      //   style:
+                      //       myTextTheme(context).headline6.apply(color: kPrim),
+                      // ),
                       // Text('${paymentService.paymentStatus}'),
                       verticalSpaceSmall,
                       FutureBuilder(
@@ -179,6 +233,7 @@ class CheckoutScreen extends StatelessWidget {
                           builder: (context, snapshot) {
                             return snapshot.hasData
                                 ? Container(
+                                    padding: EdgeInsets.all(16),
                                     width: screenWidth(context) - 16,
                                     child: Row(
                                         mainAxisAlignment:
@@ -212,8 +267,8 @@ class CheckoutScreen extends StatelessWidget {
                                               padding: EdgeInsets.symmetric(
                                                   horizontal:
                                                       screenWidth(context) *
-                                                          0.05,
-                                                  vertical: 20),
+                                                          0.005,
+                                                  vertical: 15),
                                               child: Text(
                                                 'Pay on Delivery',
                                                 style: TextStyle(color: kPrim),
@@ -250,8 +305,8 @@ class CheckoutScreen extends StatelessWidget {
                                               padding: EdgeInsets.symmetric(
                                                   horizontal:
                                                       screenWidth(context) *
-                                                          0.05,
-                                                  vertical: 20),
+                                                          0.005,
+                                                  vertical: 15),
                                               child: Text(
                                                 'Proceed To Pay ',
                                                 style: TextStyle(color: kSec),

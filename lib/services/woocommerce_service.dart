@@ -74,7 +74,7 @@ class WooService {
     }
   }
 
-  getWooVariable(int productId) async {
+  Future<List<WooProductVariation>> getWooVariable(int productId) async {
     try {
       List<WooProductVariation> variables =
           await woo.getProductVariations(productId: productId);

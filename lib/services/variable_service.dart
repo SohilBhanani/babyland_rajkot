@@ -23,14 +23,16 @@ class VariableService with ChangeNotifier {
 
   String stockStatus = '';
 
-  getVariations(WooProduct product) async {
+  Future<List<WooProductVariation>> getVariations(WooProduct product) async {
     try {
       variationList = await WooService().getWooVariable(product.id);
       images = List<String>.generate(
           product.images.length, (index) => product.images[index].src);
+      print("THis iss ssd"+variationList[0].toString());
       return variationList;
     } catch (e) {
       print('Error in Variable Service: $e');
+      return [];
     }
   }
 

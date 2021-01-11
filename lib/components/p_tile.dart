@@ -10,7 +10,7 @@ class PTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120,
+      height: 150,
       child: Padding(
         padding: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
         child: Card(
@@ -39,15 +39,21 @@ class PTile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      products.name,
-                      style: Theme.of(context).textTheme.bodyText1,
+                    FittedBox(
+                      child: lrPadding(
+
+                        child: Text(
+                          products.name,
+                          style: Theme.of(context).textTheme.bodyText1,
+                        ),
+                      ),
                     ),
                     // Text(
                     //   products.shortDescription,
                     //   style: Theme.of(context).textTheme.headline5,
                     // ),
                     myHtmlParser(
+
                       products.shortDescription,
                     ),
                     // verticalSpaceSmall,

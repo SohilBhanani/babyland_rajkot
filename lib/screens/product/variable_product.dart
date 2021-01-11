@@ -81,16 +81,27 @@ class VariableProduct extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: DropdownButtonFormField(
                                 value: value.currentSize,
+                                // value: '50 ml',
                                 hint: Text('Available Size'),
                                 decoration: InputDecoration(
                                     border: OutlineInputBorder(
                                         borderRadius: roundedCorner(12))),
-                                items: product.attributes[1].options
+                                items: product.attributes.length == 1?product.attributes[0].options
                                     .map((e) => DropdownMenuItem(
                                           child: Text(e),
                                           value: e,
                                         ))
+                                    .toList():product.attributes[1].options
+                                    .map((e) => DropdownMenuItem(
+                                  child: Text(e),
+                                  value: e,
+                                ))
                                     .toList(),
+                                // items: [
+                                //   DropdownMenuItem(child: Text(product.attributes[0].options[0])),
+                                //   DropdownMenuItem(child: Text(product.attributes[0].options[1])),
+                                //   DropdownMenuItem(child: Text(product.attributes[0].options[2])),
+                                // ],
                                 onChanged: (val) {
                                   value.currentSize = val;
                                   value.stockStatus = '';
