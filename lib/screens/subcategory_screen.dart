@@ -1,9 +1,12 @@
+import 'package:babylandrajkot/services/auth_service.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:woocommerce/models/product_category.dart';
 
 import '../components/category_card.dart';
 import '../screens/p_list_screen.dart';
 import '../shared/ui_helpers.dart';
+import 'cart_screen.dart';
 
 class SubCategoryScreen extends StatelessWidget {
   final int id;
@@ -15,7 +18,8 @@ class SubCategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(parentName)),
+      appBar: AppBar(title: Text(parentName),
+      ),
       body: GridView.builder(
         itemCount: subcategory.length,
           gridDelegate:

@@ -1,3 +1,4 @@
+import 'package:babylandrajkot/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:woocommerce/models/products.dart';
@@ -6,6 +7,7 @@ import '../components/p_tile.dart';
 import '../services/scrolling_service.dart';
 import '../services/variable_service.dart';
 import '../shared/ui_helpers.dart';
+import 'cart_screen.dart';
 import 'product/product_screen.dart';
 
 class PListScreen extends StatefulWidget {
@@ -42,9 +44,19 @@ class _PListScreenState extends State<PListScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // FireUser user = Provider.of<FireUser>(context);
+
     return Scaffold(
+
       appBar: AppBar(
         title: Text(widget.categoryName),
+    //   actions: [
+    //   IconButton(
+    //   icon: Icon(Icons.shopping_basket),
+    //   onPressed: () =>
+    //       myNavigation(context, CartScreen(uid: user.uid)),
+    // )
+    // ],
       ),
       body: StreamBuilder(
         stream: products.stream,

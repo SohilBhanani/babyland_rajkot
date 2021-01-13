@@ -168,57 +168,75 @@ class CheckoutScreen extends StatelessWidget {
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [Container(
-                      width: screenWidth(context)-16,
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Text('Total (Incl. GST): ',
-                                style: myTextTheme(context)
-                                    .button
-                                    .apply(color: Colors.grey[600])),
-                          ),
-                          Text(cartService.totalPrice().toString(),
-                              style: myTextTheme(context)
-                                  .button
-                                  .apply(color: Colors.grey[600])),
-                        ],
-                      ),
-                    ),
+                    children: [
                       Container(
                         width: screenWidth(context)-16,
                         child: Row(
                           children: [
                             Expanded(
-                              child: Text('Shipping:',
-                                  style: myTextTheme(context)
-                                      .button
-                                      .apply(color: Colors.grey[600])),
-                            ),
-                            Text('400',
-                                style: myTextTheme(context)
-                                    .button
-                                    .apply(color: Colors.grey[600])),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width: screenWidth(context)-16,
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: Text('Grand Total:',
+                              child: Text('Total : ',
                                   style: myTextTheme(context)
                                       .headline6
-                                      .apply(color: kPrim)),
+                                      .apply(color:kPrim)),
                             ),
-                            Text('40',
+                            Text(cartService.totalPrice().toString(),
                                 style: myTextTheme(context)
                                     .headline6
                                     .apply(color: kPrim)),
                           ],
                         ),
                       ),
+                    //   Container(
+                    //   width: screenWidth(context)-16,
+                    //   child: Row(
+                    //     children: [
+                    //       Expanded(
+                    //         child: Text('Total (Incl. GST): ',
+                    //             style: myTextTheme(context)
+                    //                 .button
+                    //                 .apply(color: Colors.grey[600])),
+                    //       ),
+                    //       Text(cartService.totalPrice().toString(),
+                    //           style: myTextTheme(context)
+                    //               .button
+                    //               .apply(color: Colors.grey[600])),
+                    //     ],
+                    //   ),
+                    // ),
+                    //   Container(
+                    //     width: screenWidth(context)-16,
+                    //     child: Row(
+                    //       children: [
+                    //         Expanded(
+                    //           child: Text('Shipping:',
+                    //               style: myTextTheme(context)
+                    //                   .button
+                    //                   .apply(color: Colors.grey[600])),
+                    //         ),
+                    //         Text('400',
+                    //             style: myTextTheme(context)
+                    //                 .button
+                    //                 .apply(color: Colors.grey[600])),
+                    //       ],
+                    //     ),
+                    //   ),
+                    //   Container(
+                    //     width: screenWidth(context)-16,
+                    //     child: Row(
+                    //       children: [
+                    //         Expanded(
+                    //           child: Text('Grand Total:',
+                    //               style: myTextTheme(context)
+                    //                   .headline6
+                    //                   .apply(color: kPrim)),
+                    //         ),
+                    //         Text('40',
+                    //             style: myTextTheme(context)
+                    //                 .headline6
+                    //                 .apply(color: kPrim)),
+                    //       ],
+                    //     ),
+                    //   ),
                       // Text(
                       //   'Total (Incl GST): ' +
                       //       cartService.totalPrice().toString(),

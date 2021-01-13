@@ -41,8 +41,9 @@ class CategoryCard extends StatelessWidget {
                     child: Align(
                       alignment: AlignmentDirectional.center,
                       child: Text(
-                        name,
+                        name.replaceAll('&amp;', '&'),
                         style:myTextTheme(context).bodyText1,
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
