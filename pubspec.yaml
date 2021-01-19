@@ -28,6 +28,7 @@ dependencies:
   razorpay_flutter: ^1.2.2
   url_launcher: ^5.7.8
   woocommerce: ^0.9.7
+  package_info: ^0.4.3+2
 
 dev_dependencies:
   flutter_test:

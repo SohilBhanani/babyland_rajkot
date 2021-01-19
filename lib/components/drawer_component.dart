@@ -1,5 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:package_info/package_info.dart';
 import 'package:provider/provider.dart';
+import 'package:yaml/yaml.dart';
 
 import '../screens/drawer_screens/about_us.dart';
 import '../screens/drawer_screens/my_orders.dart';
@@ -10,8 +15,28 @@ import '../shared/social_media.dart';
 import '../shared/ui_helpers.dart';
 
 class DrawerComponent extends StatelessWidget {
+  String appName;
+  String packageName;
+  String version;
+  String buildNumber;
   @override
   Widget build(BuildContext context) {
+  PackageInfo.fromPlatform().then((PackageInfo packageInfo) {
+    appName = packageInfo.appName;
+    packageName = packageInfo.packageName;
+   version = packageInfo.version;
+  buildNumber = packageInfo.buildNumber;
+  });
+  // Future<Map> conf = loadConfig("../pubspec.yaml");
+  // conf.then((Map config) {
+  //   print(config['name']);
+  //   print(config['description']);
+  //   print(config['version']);
+  //   print(config['author']);
+  //   print(config['homepage']);
+  //   print(config['dependencies']);
+  // });
+  // PackageInfo packageInfo = await PackageInfo.fromPlatform();
     FireUser user = Provider.of<FireUser>(context);
     return Drawer(
       child: Theme(
@@ -79,18 +104,37 @@ class DrawerComponent extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Column(
               children: [
-                email,
-                SizedBox(
-                  width: 20,
+                FutureBuilder(
+
+                    future: rootBundle.loadString("pubspec.yaml"),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        var yaml = loadYaml(snapshot.data);
+                        version = yaml["version"];
+                      }
+
+                      return Container(
+                        child: Text(
+                            'Version: $version+$buildNumber'
+                        ),
+                      );
+                    }),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    email,
+                    SizedBox(
+                      width: 20,
+                    ),
+                    instaIcon,
+                    SizedBox(
+                      width: 20,
+                    ),
+                    facebook,
+                  ],
                 ),
-                instaIcon,
-                SizedBox(
-                  width: 20,
-                ),
-                facebook,
               ],
             ),
           ],

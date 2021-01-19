@@ -49,7 +49,8 @@ class _PListScreenState extends State<PListScreen> {
     return Scaffold(
 
       appBar: AppBar(
-        title: Text(widget.categoryName),
+        title: Text(widget.categoryName.replaceAll('&amp;', '&')),
+
     //   actions: [
     //   IconButton(
     //   icon: Icon(Icons.shopping_basket),

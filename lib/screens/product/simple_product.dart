@@ -65,7 +65,7 @@ class SimpleProduct extends StatelessWidget {
                     isColor: true,
                   )
                 : Container(),
-            product.attributes.length > 0
+            product.attributes.length == 2
                 ? MyCustomRadio(
                     attr: product.attributes[1].options, //size
                   )
