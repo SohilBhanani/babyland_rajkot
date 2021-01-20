@@ -6,29 +6,41 @@ class WooService {
 
   List<WooProductCategory> sCategories;
 
+  List<WooProductCategory> categories;
+
   List<WooProduct> products;
 
   List<WooProduct> featuredProducts;
 
   List<WooProductVariation> variables;
 
-  getWooPCategory() async {
-    try {
-      pCategories = await woo.getProductCategories(perPage: 75, parent: 0);
-      return pCategories;
-    } catch (e) {
-      print('Error in getWooPCategory: ' + e.toString());
-      return [];
-    }
-  }
+  // getWooPCategory() async {
+  //   try {
+  //     pCategories = await woo.getProductCategories(perPage: 100, parent: 0);
+  //     return pCategories;
+  //   } catch (e) {
+  //     print('Error in getWooPCategory: ' + e.toString());
+  //     return [];
+  //   }
+  // }
+  //
+  // Future<List<WooProductCategory>> getWooSCategory(int parentId) async {
+  //   try {
+  //     sCategories =
+  //         await woo.getProductCategories(perPage: 50, parent: parentId);
+  //     return sCategories;
+  //   } catch (e) {
+  //     print('Error in getWooSCategory: ' + e.toString());
+  //     return [];
+  //   }
+  // }
 
-  Future<List<WooProductCategory>> getWooSCategory(int parentId) async {
-    try {
-      sCategories =
-          await woo.getProductCategories(perPage: 50, parent: parentId);
-      return sCategories;
-    } catch (e) {
-      print('Error in getWooSCategory: ' + e.toString());
+  Future<List<WooProductCategory>> getWooCategory() async {
+    try{
+      categories = await woo.getProductCategories(perPage: 100);
+      return categories;
+    } catch(e) {
+      print('Error in WooCategory: $e');
       return [];
     }
   }
