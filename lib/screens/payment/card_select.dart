@@ -450,9 +450,9 @@ class CardMonthInputFormatter extends TextInputFormatter {
       }
     }
 
-    var string = buffer.toString();
-    return newValue.copyWith(
-        text: string,
-        selection: new TextSelection.collapsed(int: string.length));
+    // var string = buffer.toString();
+    // return newValue.copyWith(
+        // text: string,
+        // selection: new TextSelection.collapsed(int: string.length));
   }
 }
