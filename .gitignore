@@ -1,3 +1,6 @@
+#API Config
+config.dart
+
 # Miscellaneous
 *.class
 *.log
