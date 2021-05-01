@@ -17,8 +17,6 @@
 * WooCommerce API
 * RazorPay
 
-###Screenshots
-
 ## Screenshots
 
 <p align="center">
@@ -43,7 +41,7 @@ To run it, just create a **config.dart** file under ***/lib*** folder and assign
   ```sh
 	const liveUrl = <ENTER URL>;
 	const liveConsumerKey = <ENTER CONSUMER KEY>;
-	const liveConsumerSecret =<ENTER CONSUMER SECRET>;
+	const liveConsumerSecret = <ENTER CONSUMER SECRET>;
 	
 	const List liveAPI = [liveUrl,liveConsumerKey,liveConsumerSecret];
   ```
