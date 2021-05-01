@@ -6,7 +6,7 @@ List configAPI = liveAPI;
 WooCommerceAPI wooCommerceAPI = WooCommerceAPI(
   url: configAPI[0],
   consumerKey: configAPI[1],
-  consumerSecret: configAPI[2],
+  consumerSecret: configAPI[2], 
 
 );
 
