@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
+import '../config.dart';
 import '../services/database_service.dart';
 import '../shared/colors.dart';
-//test
-//rzp_test_yyoeTOKh8VgWMN
-//lHE6Jguq9xEcQ2smlGUUqvJX
 
-//live
-//rzp_live_7788YlT5Fp35zY
-//MigzjNbGzvRRPacKgvB51Guw
 
 class PaymentService with ChangeNotifier {
   var _razorpay;
@@ -101,7 +96,7 @@ class PaymentService with ChangeNotifier {
       @required String contact,
       @required double amount}) {
     var options = {
-      'key': 'rzp_live_7788YlT5Fp35zY',
+      'key': live_pay,
       'amount': amount * 100,
       'name': 'Babyland',
       'description': ' Online Payment',
