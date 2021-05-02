@@ -39,11 +39,22 @@ Enter Woocommerce API config as shown below,
 To run it, just create a **config.dart** file under ***/lib*** folder and assign your API Details as below.
 * config.dart
   ```sh
+    //WooCommerce
 	const liveUrl = <ENTER URL>;
 	const liveConsumerKey = <ENTER CONSUMER KEY>;
 	const liveConsumerSecret = <ENTER CONSUMER SECRET>;
 	
 	const List liveAPI = [liveUrl,liveConsumerKey,liveConsumerSecret];
+	
+	//Razorpay
+	const test_pay = <RAZORPAY TEST KEY>; //rzp_test_xxxxxx
+	const live_pay = <RAZORPAY LIVE KEY>; //rzp_live_xxxxxx
+	
+	//Stripe
+	const publishable_live =<LIVE PUBLISHABLE KEY> //pk_live_xxxxxx
+	const publishable_test =<TEST PUBLISHABLE KEY> //pk_test_xxxxxx
+	const secret_live = <LIVE SECRET KEY> //sk_live_xxxxxx
+	const secret_test = <TEST SECRET KEY> //sk_test_xxxxxx
   ```
 
 <!-- CONTACT -->
