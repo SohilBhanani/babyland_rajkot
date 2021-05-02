@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:stripe_payment/stripe_payment.dart';
 
+import '../config.dart';
+
 class StripeTransactionResponse {
   String message;
   bool success;
@@ -12,10 +14,7 @@ class StripeTransactionResponse {
 class StripeService {
   static String apiBase = 'https://api.stripe.com/v1';
   static String paymentApiUrl = '${StripeService.apiBase}/payment_intents';
-  static String secret =
-//       "sk_test_51HC1eAAwfBNLaWKmRHvIRTGQZzZ7IhNAKpEvKgoqNoshiVc48m0jDoLqeMglQ1yiDVVUsesN1PeUHz4Tq9gxytBS00SKO4AJAt";
-
-     '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';
+  static String secret = secret_live;
 
   static Map<String, String> headers = {
     'Authorization': 'Bearer ${StripeService.secret}',
@@ -25,9 +24,7 @@ class StripeService {
   static init() {
     StripePayment.setOptions(
       StripeOptions(
-        publishableKey:
-           "pk_live_51HC1eAAwfBNLaWKmKhkQUXCGNxEx6jXcwSltSSyZWvhzeam6Mer4kN9bFfTad4qSdcdhs3sk1e1snLKolyDGNiJR00CLpj1RLx",
-//             "pk_test_51HC1eAAwfBNLaWKmy0Sg0bZoHoA0msafXfUByXarQyTKUrnodwKd7fF9srhrh4epr6ZNlpgS4tkrOFbPiLkub6i600ryjXhFsT",
+        publishableKey: publishable_live,
         merchantId: "Test",
         androidPayMode: 'test',
       ),
