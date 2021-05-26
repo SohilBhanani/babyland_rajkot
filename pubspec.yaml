@@ -11,24 +11,24 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  carousel_slider: ^2.3.1
   cloud_firestore: ^0.14.1+3
-  cupertino_icons: ^1.0.0
-  direct_select: ^1.1.0
   firebase_auth: ^0.18.1+2
   firebase_core: ^0.5.0+1
   firebase_storage: ^4.0.1
-  flutter_boxicons: ^2.0.1
   flutter_html: ^1.0.2
   flutter_launcher_icons: ^0.8.1
-  fluttertoast: ^7.1.6
   intl: ^0.16.1
-  photo_view: ^0.10.2
-  provider: ^4.3.2+2
-  razorpay_flutter: ^1.2.2
+  carousel_slider: ^3.0.0
+  cupertino_icons: ^1.0.3
+  direct_select: ^2.0.0
+  flutter_boxicons: ^3.0.0
+  fluttertoast: ^8.0.7
+  photo_view: ^0.11.1
+  provider: ^5.0.0
+  razorpay_flutter: ^1.2.6
   url_launcher: ^5.7.8
   woocommerce: ^0.9.7
-  package_info: ^0.4.3+2
+  package_info: ^2.0.1
 
 dev_dependencies:
   flutter_test:
