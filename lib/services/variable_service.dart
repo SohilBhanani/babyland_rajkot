@@ -28,7 +28,7 @@ class VariableService with ChangeNotifier {
       variationList = await WooService().getWooVariable(product.id);
       images = List<String>.generate(
           product.images.length, (index) => product.images[index].src);
-      print("THis iss ssd"+variationList[0].toString());
+      print("THis iss ssd" + variationList[0].toString());
       return variationList;
     } catch (e) {
       print('Error in Variable Service: $e');
@@ -104,6 +104,7 @@ class VariableService with ChangeNotifier {
     for (WooProductVariation i in variationList) {
       if (i.attributes.length == 1) {
         if (i.attributes[0].option == ksize) {
+          print("variable_serviceee----" + i.image.name.toString());
           varImage = i.image.src;
           notifyListeners();
           stockStatus = i.stockStatus;

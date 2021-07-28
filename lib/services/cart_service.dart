@@ -40,6 +40,8 @@ class CartService with ChangeNotifier {
   totalPrice() {
     double sum = 0;
     for (int i = 0; i < _cart.length; i++) {
+      print(
+          "regular and sales ${_cart[i].regularPrice}  ${_cart[i].salePrice}");
       String sPrice =
           _cart[i].salePrice == '' ? _cart[i].regularPrice : _cart[i].salePrice;
       double dPrice = double.parse(sPrice);

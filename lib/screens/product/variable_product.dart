@@ -25,6 +25,7 @@ class VariableProduct extends StatelessWidget {
           builder: (context, value, _) => FutureBuilder(
             future: value.getVariations(product),
             builder: (BuildContext context, snapshot) {
+              print("variable_product: " + value.varImage);
               return snapshot.hasData
                   ? SingleChildScrollView(
                       child: Column(
@@ -86,17 +87,19 @@ class VariableProduct extends StatelessWidget {
                                 decoration: InputDecoration(
                                     border: OutlineInputBorder(
                                         borderRadius: roundedCorner(12))),
-                                items: product.attributes.length == 1?product.attributes[0].options
-                                    .map((e) => DropdownMenuItem(
-                                          child: Text(e),
-                                          value: e,
-                                        ))
-                                    .toList():product.attributes[1].options
-                                    .map((e) => DropdownMenuItem(
-                                  child: Text(e),
-                                  value: e,
-                                ))
-                                    .toList(),
+                                items: product.attributes.length == 1
+                                    ? product.attributes[0].options
+                                        .map((e) => DropdownMenuItem(
+                                              child: Text(e),
+                                              value: e,
+                                            ))
+                                        .toList()
+                                    : product.attributes[1].options
+                                        .map((e) => DropdownMenuItem(
+                                              child: Text(e),
+                                              value: e,
+                                            ))
+                                        .toList(),
                                 // items: [
                                 //   DropdownMenuItem(child: Text(product.attributes[0].options[0])),
                                 //   DropdownMenuItem(child: Text(product.attributes[0].options[1])),

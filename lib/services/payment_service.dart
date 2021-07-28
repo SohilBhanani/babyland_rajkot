@@ -6,8 +6,8 @@ import '../config.dart';
 import '../services/database_service.dart';
 import '../shared/colors.dart';
 
-
 class PaymentService with ChangeNotifier {
+  String apiKey = live_pay;
   var _razorpay;
   String paymentStatus = 'initial';
   List<String> names;
@@ -82,7 +82,9 @@ class PaymentService with ChangeNotifier {
     paymentStatus = 'failure';
     notifyListeners();
     Fluttertoast.showToast(
-        msg: 'Payment Failed: Please Try Again Later', backgroundColor: kRed);
+      msg: 'Payment Failed: Please Try Again Later',
+      backgroundColor: kRed,
+    );
   }
 
   void _handleExternalWallet(ExternalWalletResponse response) {
@@ -91,15 +93,17 @@ class PaymentService with ChangeNotifier {
     notifyListeners();
   }
 
-  launchRazorPay(
-      {@required String email,
-      @required String contact,
-      @required double amount}) {
+  launchRazorPay({
+    @required String email,
+    @required String contact,
+    @required double amount,
+    @required String description,
+  }) {
     var options = {
-      'key': live_pay,
+      'key': apiKey,
       'amount': amount * 100,
       'name': 'Babyland',
-      'description': ' Online Payment',
+      'description': description,
       'prefill': {'contact': contact, 'email': email},
       // 'external': {
       //   'wallets': ['paytm']

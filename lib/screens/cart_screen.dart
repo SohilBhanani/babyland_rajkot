@@ -15,6 +15,7 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var bloc = Provider.of<CartService>(context);
     // List<CartModel> cart = bloc.cart;
+    // print("PRICE" + bloc.totalPrice());
     String totalPrice = bloc.totalPrice().toString();
     // print('SS' + bloc.cart[0].color.toString());
     return Scaffold(

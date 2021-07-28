@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 
 import '../components/address_bottom_sheet.dart';
@@ -91,7 +92,7 @@ class CheckoutScreen extends StatelessWidget {
                             snapshot.data['address'],
                             style: myTextTheme(context).bodyText1,
                           )
-                        : CircularProgressIndicator();
+                        : Center(child: CircularProgressIndicator());
                   },
                 ),
               ),
@@ -170,14 +171,14 @@ class CheckoutScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
-                        width: screenWidth(context)-16,
+                        width: screenWidth(context) - 16,
                         child: Row(
                           children: [
                             Expanded(
                               child: Text('Total : ',
                                   style: myTextTheme(context)
                                       .headline6
-                                      .apply(color:kPrim)),
+                                      .apply(color: kPrim)),
                             ),
                             Text(cartService.totalPrice().toString(),
                                 style: myTextTheme(context)
@@ -186,57 +187,57 @@ class CheckoutScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                    //   Container(
-                    //   width: screenWidth(context)-16,
-                    //   child: Row(
-                    //     children: [
-                    //       Expanded(
-                    //         child: Text('Total (Incl. GST): ',
-                    //             style: myTextTheme(context)
-                    //                 .button
-                    //                 .apply(color: Colors.grey[600])),
-                    //       ),
-                    //       Text(cartService.totalPrice().toString(),
-                    //           style: myTextTheme(context)
-                    //               .button
-                    //               .apply(color: Colors.grey[600])),
-                    //     ],
-                    //   ),
-                    // ),
-                    //   Container(
-                    //     width: screenWidth(context)-16,
-                    //     child: Row(
-                    //       children: [
-                    //         Expanded(
-                    //           child: Text('Shipping:',
-                    //               style: myTextTheme(context)
-                    //                   .button
-                    //                   .apply(color: Colors.grey[600])),
-                    //         ),
-                    //         Text('400',
-                    //             style: myTextTheme(context)
-                    //                 .button
-                    //                 .apply(color: Colors.grey[600])),
-                    //       ],
-                    //     ),
-                    //   ),
-                    //   Container(
-                    //     width: screenWidth(context)-16,
-                    //     child: Row(
-                    //       children: [
-                    //         Expanded(
-                    //           child: Text('Grand Total:',
-                    //               style: myTextTheme(context)
-                    //                   .headline6
-                    //                   .apply(color: kPrim)),
-                    //         ),
-                    //         Text('40',
-                    //             style: myTextTheme(context)
-                    //                 .headline6
-                    //                 .apply(color: kPrim)),
-                    //       ],
-                    //     ),
-                    //   ),
+                      //   Container(
+                      //   width: screenWidth(context)-16,
+                      //   child: Row(
+                      //     children: [
+                      //       Expanded(
+                      //         child: Text('Total (Incl. GST): ',
+                      //             style: myTextTheme(context)
+                      //                 .button
+                      //                 .apply(color: Colors.grey[600])),
+                      //       ),
+                      //       Text(cartService.totalPrice().toString(),
+                      //           style: myTextTheme(context)
+                      //               .button
+                      //               .apply(color: Colors.grey[600])),
+                      //     ],
+                      //   ),
+                      // ),
+                      //   Container(
+                      //     width: screenWidth(context)-16,
+                      //     child: Row(
+                      //       children: [
+                      //         Expanded(
+                      //           child: Text('Shipping:',
+                      //               style: myTextTheme(context)
+                      //                   .button
+                      //                   .apply(color: Colors.grey[600])),
+                      //         ),
+                      //         Text('400',
+                      //             style: myTextTheme(context)
+                      //                 .button
+                      //                 .apply(color: Colors.grey[600])),
+                      //       ],
+                      //     ),
+                      //   ),
+                      //   Container(
+                      //     width: screenWidth(context)-16,
+                      //     child: Row(
+                      //       children: [
+                      //         Expanded(
+                      //           child: Text('Grand Total:',
+                      //               style: myTextTheme(context)
+                      //                   .headline6
+                      //                   .apply(color: kPrim)),
+                      //         ),
+                      //         Text('40',
+                      //             style: myTextTheme(context)
+                      //                 .headline6
+                      //                 .apply(color: kPrim)),
+                      //       ],
+                      //     ),
+                      //   ),
                       // Text(
                       //   'Total (Incl GST): ' +
                       //       cartService.totalPrice().toString(),
@@ -253,85 +254,139 @@ class CheckoutScreen extends StatelessWidget {
                                 ? Container(
                                     padding: EdgeInsets.all(16),
                                     width: screenWidth(context) - 16,
-                                    child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          FlatButton(
-                                            color: kSec,
-                                            // shape: roundedCornerShape(12),
-                                            onPressed: () async {
-                                              Provider.of<DbService>(context,
-                                                      listen: false)
-                                                  .generateOrder(
-                                                      names: items,
-                                                      uid: uid,
-                                                      personName:
-                                                          snapshot.data['name'],
-                                                      whatsapp: snapshot
-                                                          .data['contact'],
-                                                      email: snapshot
-                                                          .data['email'],
-                                                      amount: cartService
-                                                          .totalPrice(),
-                                                      address: snapshot
-                                                          .data['address'],
-                                                      payment: 'Cod',
-                                                      status: 'Processing',
-                                                      context: context,
-                                                      orderId: '/');
-                                            },
-                                            child: Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal:
-                                                      screenWidth(context) *
-                                                          0.005,
-                                                  vertical: 15),
-                                              child: Text(
-                                                'Pay on Delivery',
-                                                style: TextStyle(color: kPrim),
-                                              ),
-                                            ),
-                                          ),
-                                          FlatButton(
-                                            color: kPrim,
-                                            // shape: roundedCornerShape(12),
-                                            onPressed: () async {
-                                              paymentService.setPaymentDetails(
-                                                items,
-                                                uid,
-                                                snapshot.data['name'],
-                                                snapshot.data['contact'],
-                                                snapshot.data['email'],
-                                                cartService.totalPrice(),
-                                                snapshot.data['address'],
-                                                'cardi',
-                                                'Processing',
-                                                context,
-                                              );
-                                              paymentService.launchRazorPay(
-                                                email: snapshot.data['email'],
-                                                contact:
-                                                    snapshot.data['contact'],
-                                                amount:
-                                                    cartService.totalPrice(),
-                                              );
-                                              // print(
-                                              // 'Status of Payment -- ${paymentService.paymentStatus}');
-                                            },
-                                            child: Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal:
-                                                      screenWidth(context) *
-                                                          0.005,
-                                                  vertical: 15),
-                                              child: Text(
-                                                'Proceed To Pay ',
-                                                style: TextStyle(color: kSec),
-                                              ),
-                                            ),
-                                          )
-                                        ]))
+                                    child: StreamBuilder(
+                                        stream: Provider.of<DbService>(context)
+                                            .getUserAddress(uid),
+                                        builder: (context, stream) {
+                                          var itemString = StringBuffer();
+                                          items.forEach((element) {
+                                            itemString.write(element + "\n");
+                                          });
+                                          return Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                FlatButton(
+                                                  color: kSec,
+                                                  // shape: roundedCornerShape(12),
+                                                  onPressed:
+                                                      stream.data['address'] ==
+                                                              ""
+                                                          ? () {
+                                                              Fluttertoast
+                                                                  .showToast(
+                                                                msg:
+                                                                    'Please add your Address 🏠',
+                                                                backgroundColor:
+                                                                    kRed,
+                                                              );
+                                                            }
+                                                          : () async {
+                                                              Provider.of<DbService>(context, listen: false).generateOrder(
+                                                                  names: items,
+                                                                  uid: uid,
+                                                                  personName:
+                                                                      snapshot.data[
+                                                                          'name'],
+                                                                  whatsapp: snapshot
+                                                                          .data[
+                                                                      'contact'],
+                                                                  email: snapshot
+                                                                          .data[
+                                                                      'email'],
+                                                                  amount: cartService
+                                                                      .totalPrice(),
+                                                                  address: stream
+                                                                          .data[
+                                                                      'address'],
+                                                                  payment:
+                                                                      'Cod',
+                                                                  status:
+                                                                      'Processing',
+                                                                  context:
+                                                                      context,
+                                                                  orderId: '/');
+                                                            },
+                                                  child: Padding(
+                                                    padding: EdgeInsets.symmetric(
+                                                        horizontal: screenWidth(
+                                                                context) *
+                                                            0.005,
+                                                        vertical: 15),
+                                                    child: Text(
+                                                      'Pay on Delivery',
+                                                      style: TextStyle(
+                                                          color: kPrim),
+                                                    ),
+                                                  ),
+                                                ),
+                                                FlatButton(
+                                                  color: kPrim,
+                                                  // shape: roundedCornerShape(12),
+                                                  onPressed: stream.data[
+                                                              'address'] ==
+                                                          ""
+                                                      ? () {
+                                                          Fluttertoast
+                                                              .showToast(
+                                                            msg:
+                                                                'Please add your Address 🏠',
+                                                            backgroundColor:
+                                                                kRed,
+                                                          );
+                                                        }
+                                                      : () async {
+                                                          paymentService
+                                                              .setPaymentDetails(
+                                                            items,
+                                                            uid,
+                                                            snapshot
+                                                                .data['name'],
+                                                            snapshot.data[
+                                                                'contact'],
+                                                            snapshot
+                                                                .data['email'],
+                                                            cartService
+                                                                .totalPrice(),
+                                                            stream.data[
+                                                                'address'],
+                                                            'Paid',
+                                                            'Processing',
+                                                            context,
+                                                          );
+                                                          paymentService
+                                                              .launchRazorPay(
+                                                                  email: snapshot
+                                                                          .data[
+                                                                      'email'],
+                                                                  contact: snapshot
+                                                                          .data[
+                                                                      'contact'],
+                                                                  amount: cartService
+                                                                      .totalPrice(),
+                                                                  // description: items
+                                                                  //     .toString());
+                                                                  description:
+                                                                      itemString
+                                                                          .toString());
+                                                          // print(
+                                                          // 'Status of Payment -- ${paymentService.paymentStatus}');
+                                                        },
+                                                  child: Padding(
+                                                    padding: EdgeInsets.symmetric(
+                                                        horizontal: screenWidth(
+                                                                context) *
+                                                            0.005,
+                                                        vertical: 15),
+                                                    child: Text(
+                                                      'Proceed To Pay ',
+                                                      style: TextStyle(
+                                                          color: kSec),
+                                                    ),
+                                                  ),
+                                                )
+                                              ]);
+                                        }))
                                 : Container(
                                     width: screenWidth(context) - 16,
                                     child: Center(
